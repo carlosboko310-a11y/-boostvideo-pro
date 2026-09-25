@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>BoostVideo Pro — Boostez vos vidéos Facebook</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #15233d;
+      background: white;
+      line-height: 1.6;
+    }
+
+    .wrap {
+      width: 92%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: white;
+      border-bottom: 1px solid #e7edf5;
+    }
+
+    .nav {
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      font-size: 25px;
+      font-weight: 900;
+    }
+
+    .brand span {
+      color: #1877f2;
+    }
+
+    nav a {
+      margin-left: 18px;
+      text-decoration: none;
+      color: #53627a;
+      font-weight: bold;
+    }
+
+    .hero {
+      padding: 75px 0;
+      background: linear-gradient(135deg, #eef6ff, #fff);
+    }
+
+    .hero-grid,
+    .two {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .pill {
+      display: inline-block;
+      background: #e4f0ff;
+      color: #1877f2;
+      padding: 7px 12px;
+      border-radius: 30px;
+      font-weight: bold;
+    }
+
+    .hero h1 {
+      font-size: clamp(40px, 6vw, 65px);
+      line-height: 1.05;
+      margin: 18px 0;
+    }
+
+    .hero p {
+      font-size: 19px;
+      color: #607089;
+    }
+
+    .btn,
+    button {
+      display: inline-block;
+      border: 0;
+      border-radius: 10px;
+      padding: 13px 19px;
+      font-weight: bold;
+      cursor: pointer;
+      background: #1877f2;
+      color: white;
+    }
+
+    .hero .btn {
+      margin: 10px 8px 10px 0;
+      text-decoration: none;
+    }
+
+    .preview {
+      background: #14213d;
+      color: white;
+      border-radius: 24px;
+      padding: 25px;
+    }
+
+    .screen {
+      background: linear-gradient(145deg, #1877f2, #79baff);
+      padding: 65px 25px;
+      border-radius: 17px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .section {
+      padding: 75px 0;
+    }
+
+    .light {
+      background: #f7faff;
+    }
+
+    .head {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+
+    .head span,
+    .eyebrow {
+      color: #1877f2;
+      font-weight: 900;
+    }
+
+    .head h2,
+    .two h2 {
+      font-size: 38px;
+      line-height: 1.15;
+    }
+
+    .grid3,
+    .pricing,
+    .pay-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card,
+    .price,
+    .dashboard,
+    .pay {
+      background: white;
+      border: 1px solid #e2e9f2;
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 10px 30px #17355d10;
+    }
+
+    .price.featured {
+      border: 2px solid #1877f2;
+    }
+
+    .price strong {
+      font-size: 34px;
+      display: block;
+    }
+
+    .price ul {
+      list-style: none;
+      padding: 0;
+      line-height: 2;
+    }
+
+    .price button,
+    .pay button,
+    .full {
+      width: 100%;
+    }
+
+    .two {
+      align-items: start;
+    }
+
+    form {
+      background: white;
+      padding: 25px;
+      border-radius: 18px;
+      border: 1px solid #e2e9f2;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 14px;
+    }
+
+    input,
+    select {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      margin-top: 5px;
+      border: 1px solid #d7e1ed;
+      border-radius: 9px;
+      font-size: 16px;
+    }
+
+    .dark {
+      background: #14213d;
+      color: white;
+    }
+
+    .dark p {
+      color: #b9c5d5;
+    }
+
+    .order {
+      border-top: 1px solid #dfe6ef;
+      padding: 12px 0;
+      margin-top: 10px;
+    }
+
+    footer {
+      background: #0b1526;
+      color: #aab6c8;
+      padding: 25px;
+    }
+
+    .foot {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @media (max-width: 800px) {
+      nav {
+        display: none;
+      }
+
+      .hero-grid,
+      .two,
+      .grid3,
+      .pricing,
+      .pay-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 55px 0;
+      }
+
+      .hero h1 {
+        font-size: 44px;
+      }
+
+      .head h2,
+      .two h2 {
+        font-size: 32px;
+      }
+
+      .foot {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      Boost<span>Video</span>
+    </div>
+
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#commande">Commander</a>
+      <a href="#client">Client</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+
+    <div>
+      <span class="pill">
+        🇧🇯 Promotion digitale au Bénin
+      </span>
+
+      <h1>
+        Boostez la visibilité de vos vidéos Facebook.
+      </h1>
+
+      <p>
+        Une plateforme simple pour commander une promotion,
+        suivre votre commande et contacter notre équipe.
+      </p>
+
+      <a class="btn" href="#commande">
+        Lancer une campagne
+      </a>
+
+      <a class="btn" href="#tarifs">
+        Voir les tarifs
+      </a>
+    </div>
+
+    <div class="preview">
+      <div class="screen">
+        📣<br>
+        Votre vidéo<br>
+        peut toucher plus de personnes
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="services" class="section">
+
+  <div class="wrap">
+
+    <div class="head">
+      <span>SERVICES</span>
+      <h2>Une solution professionnelle</h2>
+    </div>
+
+    <div class="grid3">
+
+      <div class="card">
+        <h3>🎯 Ciblage</h3>
+        <p>
+          Définition d'une audience adaptée à votre objectif.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>📣 Promotion</h3>
+        <p>
+          Accompagnement pour vos campagnes Facebook/Meta.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>📊 Suivi</h3>
+        <p>
+          Suivi de votre commande et informations sur la campagne.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="tarifs" class="section light">
+
+  <div class="wrap">
+
+    <div class="head">
+      <span>TARIFS</span>
+      <h2>Choisissez votre formule</h2>
+    </div>
+
+    <div class="pricing">
+
+      <div class="price">
+        <h3>Starter</h3>
+
+        <strong>5 000 FCFA</strong>
+
+        <p>Pour commencer</p>
+
+        <ul>
+          <li>✓ Mise en place</li>
+          <li>✓ Ciblage de base</li>
+          <li>✓ Suivi</li>
+        </ul>
+
+        <button onclick="plan('Starter|5000')">
+          Commander
+        </button>
+      </div>
+
+      <div class="price featured">
+
+        <h3>Pro</h3>
+
+        <strong>10 000 FCFA</strong>
+
+        <p>Pour développer une vidéo</p>
+
+        <ul>
+          <li>✓ Ciblage avancé</li>
+          <li>✓ Optimisation</li>
+          <li>✓ Rapport</li>
+        </ul>
+
+        <button onclick="plan('Pro|10000')">
+          Commander
+        </button>
+
+      </div>
+
+      <div class="price">
+
+        <h3>Business</h3>
+
+        <strong>25 000 FCFA</strong>
+
+        <p>Pour les entreprises</p>
+
+        <ul>
+          <li>✓ Stratégie personnalisée</li>
+          <li>✓ Suivi renforcé</li>
+          <li>✓ Rapport détaillé</li>
+        </ul>
+
+        <button onclick="plan('Business|25000')">
+          Commander
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="commande" class="section">
+
+  <div class="wrap two">
+
+    <div>
+
+      <span class="eyebrow">COMMANDE</span>
+
+      <h2>Lancez votre campagne</h2>
+
+      <p>
+        Remplissez le formulaire puis choisissez votre moyen de paiement.
+      </p>
+
+      <p>
+        💳 MTN Mobile Money<br>
+        💳 Moov Money
+      </p>
+
+    </div>
+
+    <form id="form">
+
+      <label>
+        Nom
+        <input id="name" required placeholder="Votre nom">
+      </label>
+
+      <label>
+        Téléphone
+        <input id="phone" required placeholder="+229...">
+      </label>
+
+      <label>
+        Lien Facebook
+        <input
+          id="video"
+          type="url"
+          required
+          placeholder="https://facebook.com/..."
+        >
+      </label>
+
+      <label>
+        Formule
+
+        <select id="planSelect">
+
+          <option value="Starter|5000">
+            Starter — 5 000 FCFA
+          </option>
+
+          <option value="Pro|10000">
+            Pro — 10 000 FCFA
+          </option>
+
+          <option value="Business|25000">
+            Business — 25 000 FCFA
+          </option>
+
+        </select>
+
+      </label>
+
+      <button class="full">
+        Créer ma commande
+      </button>
+
+    </form>
+
+  </div>
+
+</section>
+
+<section id="client" class="section light">
+
+  <div class="wrap two">
+
+    <div>
+
+      <span class="eyebrow">ESPACE CLIENT</span>
+
+      <h2>Suivez votre commande</h2>
+
+      <p>
+        Entrez le numéro utilisé lors de la commande.
+      </p>
+
+    </div>
+
+    <div class="dashboard">
+
+      <input
+        id="searchPhone"
+        placeholder="+229..."
+      >
+
+      <button
+        class="full"
+        onclick="client()"
+      >
+        Rechercher ma commande
+      </button>
+
+      <div id="result"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section dark">
+
+  <div class="wrap">
+
+    <div class="head">
+
+      <span style="color:#70b5ff">
+        PAIEMENT
+      </span>
+
+      <h2>
+        MTN Mobile Money & Moov Money
+      </h2>
+
+      <p>
+        Les boutons ci-dessous sont une interface de démonstration.
+        Une connexion API officielle est nécessaire pour effectuer
+        de vrais paiements.
+      </p>
+
+    </div>
+
+    <div
+      class="pay-grid"
+      style="max-width:800px;margin:auto"
+    >
+
+      <div class="pay">
+
+        <h3>MTN Mobile Money</h3>
+
+        <p>
+          Numéro marchand :
+          À CONFIGURER
+        </p>
+
+        <button onclick="pay('MTN Mobile Money')">
+          Payer
+        </button>
+
+      </div>
+
+      <div class="pay">
+
+        <h3>Moov Money</h3>
+
+        <p>
+          Numéro marchand :
+          À CONFIGURER
+        </p>
+
+        <button onclick="pay('Moov Money')">
+          Payer
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<footer>
+
+  <div class="wrap foot">
+
+    <b>BoostVideo Pro</b>
+
+    <span>
+      © 2026
+    </span>
+
+  </div>
+
+</footer>
+
+<script>
+
+let orders =
+  JSON.parse(
+    localStorage.getItem("boostOrders") || "[]"
+  );
+
+function plan(value) {
+
+  document.getElementById("planSelect").value = value;
+
+  location.hash = "commande";
+}
+
+document.getElementById("form").onsubmit =
+function(event) {
+
+  event.preventDefault();
+
+  let selected =
+    document.getElementById("planSelect").value.split("|");
+
+  let planName = selected[0];
+  let amount = selected[1];
+
+  let order = {
+
+    id:
+      "BV-" +
+      Date.now().toString().slice(-6),
+
+    name:
+      document.getElementById("name").value,
+
+    phone:
+      document.getElementById("phone").value,
+
+    video:
+      document.getElementById("video").value,
+
+    plan:
+      planName,
+
+    amount:
+      amount,
+
+    status:
+      "En attente de paiement"
+  };
+
+  orders.push(order);
+
+  localStorage.setItem(
+    "boostOrders",
+    JSON.stringify(orders)
+  );
+
+  alert(
+    "Commande " +
+    order.id +
+    " créée !"
+  );
+
+  location.hash = "client";
+};
+
+function client() {
+
+  let phone =
+    document.getElementById("searchPhone").value.trim();
+
+  let found =
+    orders.filter(
+      order => order.phone === phone
+    );
+
+  let result =
+    document.getElementById("result");
+
+  if (found.length) {
+
+    result.innerHTML =
+      found.map(order => `
+
+        <div class="order">
+
+          <b>${order.id}</b>
+
+          <br>
+
+          ${order.plan}
+          —
+          ${order.amount} FCFA
+
+          <br>
+
+          Statut :
+          <b>${order.status}</b>
+
+        </div>
+
+      `).join("");
+
+  } else {
+
+    result.innerHTML =
+      "<p>Aucune commande trouvée.</p>";
+  }
+}
+
+function pay(method) {
+
+  if (!orders.length) {
+
+    alert(
+      "Créez d'abord une commande."
+    );
+
+    location.hash = "commande";
+
+    return;
+  }
+
+  let order =
+    orders[orders.length - 1];
+
+  alert(
+    method +
+    "\nCommande : " +
+    order.id +
+    "\nMontant : " +
+    order.amount +
+    " FCFA\n\n" +
+    "Le paiement réel doit être connecté " +
+    "à une API officielle."
+  );
+}
+
+</script>
+
+</body>
+</html>
