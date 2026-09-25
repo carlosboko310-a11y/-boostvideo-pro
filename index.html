@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BoostVideo Pro — Facebook Ads</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="wrap nav"><a class="brand" href="#">Boost<span>Video</span></a><nav><a href="#services">Services</a><a href="#tarifs">Tarifs</a><a href="#paiement">Paiement</a><a href="#client">Espace client</a><a href="#admin">Admin</a></nav></div></header>
+
+<section class="hero"><div class="wrap hero-grid">
+<div><span class="pill">🇧🇯 Service digital • Bénin</span><h1>Transformez vos vidéos en campagnes qui touchent votre audience.</h1><p>Une plateforme professionnelle pour commander, payer et suivre vos promotions vidéo.</p><div class="actions"><a class="btn primary" href="#commande">Lancer une campagne</a><a class="btn ghost" href="#fonctionnement">Voir comment ça marche</a></div><div class="mini"><span>✓ Paiement Mobile Money</span><span>✓ Suivi client</span><span>✓ Tableau de bord</span></div></div>
+<div class="hero-card"><div class="screen-top">BOOSTVIDEO PRO <span>● En ligne</span></div><div class="metric"><small>Campagne en cours</small><strong>Votre vidéo</strong><div class="bar"><i></i></div><small>Progression du suivi</small></div><div class="numbers"><div><b>24/7</b><small>Suivi</small></div><div><b>FCFA</b><small>Paiement local</small></div><div><b>📈</b><small>Rapports</small></div></div></div>
+</div></section>
+
+<section id="services" class="section"><div class="wrap"><div class="head"><span>SERVICES</span><h2>Tout ce qu'il faut pour gérer une promotion</h2></div><div class="grid3">
+<article><b class="ico">🎯</b><h3>Ciblage</h3><p>Préparation d'une audience selon votre objectif et votre zone.</p></article>
+<article><b class="ico">📣</b><h3>Campagnes</h3><p>Accompagnement pour les campagnes publicitaires Facebook/Meta.</p></article>
+<article><b class="ico">📊</b><h3>Analytics</h3><p>Un espace pour suivre le statut de votre commande et vos informations.</p></article>
+</div></div></section>
+
+<section id="tarifs" class="section light"><div class="wrap"><div class="head"><span>FORMULES</span><h2>Des offres simples et transparentes</h2></div><div class="pricing">
+<div class="price"><h3>Starter</h3><strong>5 000 <small>FCFA</small></strong><p>Pour commencer</p><ul><li>✓ Mise en place</li><li>✓ Ciblage de base</li><li>✓ Suivi</li></ul><button onclick="choosePlan('Starter',5000)">Commander</button></div>
+<div class="price featured"><em>POPULAIRE</em><h3>Pro</h3><strong>10 000 <small>FCFA</small></strong><p>Pour développer une vidéo</p><ul><li>✓ Ciblage avancé</li><li>✓ Optimisation</li><li>✓ Rapport</li></ul><button onclick="choosePlan('Pro',10000)">Commander</button></div>
+<div class="price"><h3>Business</h3><strong>25 000 <small>FCFA</small></strong><p>Pour les entreprises</p><ul><li>✓ Stratégie personnalisée</li><li>✓ Suivi renforcé</li><li>✓ Rapport détaillé</li></ul><button onclick="choosePlan('Business',25000)">Commander</button></div>
+</div><p class="note">Le budget publicitaire peut être distinct des frais de service. Aucun nombre précis de vues, likes ou abonnés n'est garanti.</p></div></section>
+
+<section id="commande" class="section"><div class="wrap two"><div><span class="eyebrow">COMMANDE</span><h2>Créez votre campagne</h2><p>Entrez vos informations. Après validation, choisissez votre mode de paiement.</p><div class="secure">🔒 Vos données de commande restent dans votre navigateur dans cette démonstration.</div></div>
+<form id="orderForm"><label>Nom<input id="name" required></label><label>Téléphone<input id="phone" required placeholder="+229..."></label><label>Lien de la vidéo Facebook<input id="video" type="url" required placeholder="https://facebook.com/..."></label><label>Formule<select id="plan"><option value="Starter|5000">Starter — 5 000 FCFA</option><option value="Pro|10000">Pro — 10 000 FCFA</option><option value="Business|25000">Business — 25 000 FCFA</option></select></label><label>Objectif<select id="goal"><option>Visibilité</option><option>Engagement</option><option>Promouvoir mon activité</option></select></label><button class="btn primary full">Continuer vers le paiement</button></form></div></section>
+
+<section id="paiement" class="section light"><div class="wrap"><div class="head"><span>PAIEMENT</span><h2>MTN Mobile Money & Moov Money</h2><p>Cette interface prépare le paiement. Pour encaisser réellement, il faut connecter les API officielles du prestataire de paiement et un serveur sécurisé.</p></div><div class="pay-grid">
+<div class="pay"><div class="logo mtn">MTN</div><h3>MTN Mobile Money</h3><p>Numéro marchand : <b>À CONFIGURER</b></p><button onclick="startPayment('MTN Mobile Money')">Payer</button></div>
+<div class="pay"><div class="logo moov">moov</div><h3>Moov Money</h3><p>Numéro marchand : <b>À CONFIGURER</b></p><button onclick="startPayment('Moov Money')">Payer</button></div>
+</div></div></section>
+
+<section id="client" class="section"><div class="wrap two"><div><span class="eyebrow">ESPACE CLIENT</span><h2>Suivez vos commandes</h2><p>Démo d'un espace client : connectez-vous avec votre téléphone pour afficher les commandes enregistrées sur cet appareil.</p></div><div class="dashboard"><div class="dash-head"><b>Mon espace</b><span id="clientStatus">Non connecté</span></div><input id="loginPhone" placeholder="Votre téléphone"><button class="btn primary full" onclick="loginClient()">Accéder à mon espace</button><div id="clientData"></div></div></div></section>
+
+<section id="admin" class="section dark"><div class="wrap two"><div><span class="eyebrow">ADMINISTRATION</span><h2>Tableau de bord administrateur</h2><p>La démo affiche les commandes enregistrées localement. Pour une vraie plateforme multi-utilisateur, il faut une base de données et une authentification côté serveur.</p></div><div class="dashboard admin"><input id="adminPass" type="password" placeholder="Mot de passe démo"><button class="btn primary full" onclick="adminLogin()">Ouvrir le tableau de bord</button><div id="adminData"></div></div></div></section>
+
+<footer><div class="wrap foot"><b>BoostVideo Pro</b><span>© 2026 — Promotion digitale</span></div></footer>
+<script src="app.js"></script>
+</body></html>
